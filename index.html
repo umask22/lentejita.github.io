@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="http://fonts.cdnfonts.com/css/isabelle-layne" rel="stylesheet">
+</head>
+
+<body>
+    <div class="banner content-about">
+        <img src="fond.png">
+    </div>
+
+    <div class="content-about" id="projects" style="padding-top: 35px">
+        <div class="container content-about" style="padding-top: 5px;">
+
+            <img src="body01.png" >
+            <!--<div class="content">
+                <h5 class="border-top border-bottom" style="font-family: 'Isabelle Layne Bold', sans-serif; color: #ffae3c;" >Acompañanos a celebrar la llegada<br>de nuestro bebé</h5>
+            </div>
+            <div class="content">
+                <h5 class="border-top border-bottom" style="font-family: 'Isabelle Layne Bold', sans-serif; color: #ffae3c;" >Se va a llevar el dia</h5>
+            </div>
+            <div class="row justify-content-center" style="padding-top: 20px;">
+                <div class="content-about col-4" style="text-align: center; padding-top: 5px; align-self: center">
+                    <h3 style="font-family: 'Henny Penny', cursive; color: black;">Sábado</h5>
+                    <h1 style="font-family: 'Henny Penny', cursive; color: black;">05</h5>
+                    <h3 style="font-family: 'Henny Penny', cursive; color: black;">Noviembre</h5>
+                </div>
+                <div class="content-about col-4" style="padding-top: 5px;">
+                    <img src="miel.png">
+                </div>
+                <div class="content-about col-4" style="text-align: center; padding-top: 5px; align-self: center">
+                    <h1 style="font-family: 'Henny Penny', cursive; color: black;">15:00</h5>
+                    <h3 style="font-family: 'Henny Penny', cursive; color: black;">a</h5>
+                    <h1 style="font-family: 'Henny Penny', cursive; color: black;">18:00</h5>
+                </div>
+            </div>-->     
+            <div class="row">
+                <div class="card-container col-6" style="align-items: center; margin-top: 0px;">
+                    <a class="card content-about" href="https://api.whatsapp.com/send?phone=541131968213&text=Confirmo%20mi%20asistencia%20al%20BabyShower%20de%20Lentejita!%E2%99%A5">
+                    <span style="color: #b2654f" class="material-symbols-outlined">
+                        recommend
+                        </span>
+                    <span style="font-family: 'Isabelle Layne Bold';color: #b2654f">Confirmar asistencia</span>
+                    </a>
+                </div>
+                <div class="card-container col-6" style="align-items: center; margin-top: 0px;">
+                    <a class="card content-about" href="https://goo.gl/maps/smPsZbKzM4f8dvbm9">
+                        <link rel="stylesheet" href="" />
+                        <span style="color: #b2654f" class="material-symbols-outlined">home_pin</span>
+                        <span style="font-family: 'Isabelle Layne Bold';color: #b2654f">Ver mapa</span>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card-container col-12" style="margin-top: 0px;">
+                    <h3 style="font-family: 'Isabelle Layne Bold'; color: #ffae3c;">Comienza en...&nbsp;</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card-container col-12" style="margin-top: 0px;">
+                    <tr>
+                        <td>
+                            <h3 style="font-family: 'Isabelle Layne Bold'; color: #ffae3c;"><span style="color: #b2654f" id="dias"></span>&nbsp;Dias&nbsp;|&nbsp;</h3>
+                        </td>
+                        <td>
+                            <h3 style="font-family: 'Isabelle Layne Bold'; color: #ffae3c;"><span style="color: #b2654f" id="horas"></span>&nbsp;Hs&nbsp;|&nbsp;</h3>
+                        </td>
+                        <td>
+                            <h3 style="font-family: 'Isabelle Layne Bold'; color: #ffae3c;"><span style="color: #b2654f" id="minutos"></span>&nbsp;Min&nbsp;|&nbsp;</h3>
+                        </td>
+                        <td>
+                            <h3 style="font-family: 'Isabelle Layne Bold'; color: #ffae3c;"><span style="color: #b2654f" id="segundos"></span>&nbsp;Seg&nbsp;</h3>
+                        </td>
+                    </tr>
+                    <p id="demo"></p>
+                </div>
+            </div>
+        </div>
+        <img src="pngwing03.png">
+    </div>
+    <script>
+        var deadline = new Date("Nov 5, 2022 15:00:00").getTime();
+        var x = setInterval(function() {
+        var now = new Date().getTime();
+        var t = deadline - now;
+        var days = Math.floor(t / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((t%(1000 * 60 * 60 * 24))/(1000 * 60 * 60));
+        var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((t % (1000 * 60)) / 1000);
+        document.getElementById("dias").innerHTML = days;
+        document.getElementById("horas").innerHTML = hours;
+        document.getElementById("minutos").innerHTML = minutes;
+        document.getElementById("segundos").innerHTML = seconds;
+            if (t < 0) {
+                clearInterval(x);
+                document.getElementById("demo").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+        </script>
+</body>
+</html>
